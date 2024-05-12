@@ -2,7 +2,7 @@ import api from "../../utils/api";
 import { receiveUsersActionCreator } from "../users/action";
 import { receiveThreadsActionCreator } from "../threads/action";
 
-function asyncPopulateUsersAndThreads() {
+function asyncPopulateUserAndThreads() {
   return async (dispatch) => {
     try {
       const users = api.getAllUsers();
@@ -16,4 +16,4 @@ function asyncPopulateUsersAndThreads() {
   };
 }
 
-export { asyncPopulateUsersAndThreads };
+export { asyncPopulateUserAndThreads };

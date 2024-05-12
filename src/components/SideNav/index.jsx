@@ -1,20 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { RiThreadsFill } from "react-icons/ri";
 import { MdOutlineLeaderboard } from "react-icons/md";
-import PostingModal from "../Modal/PostingModal";
 
 function SideNav({ authUser }) {
-  const [isPostingModalOpen, setIsPostingModalOpen] = useState(false);
-
-  const handleOpenPostingModal = () => {
-    setIsPostingModalOpen(true);
-  }
-
-  const handleClosePostingModal = () => {
-    setIsPostingModalOpen(false);
-  }
-
   const navLinks = [
     {
       icons: <RiThreadsFill />,
@@ -47,10 +36,9 @@ function SideNav({ authUser }) {
         </Link>
       ))}
       <div>
-        <button onClick={handleOpenPostingModal} className="rounded-full py-2 px-[4rem] bg-blue-300 hover:bg-blue-700 cursor-pointer">
-          Posting
+        <button className="rounded-full py-2 px-[4rem] bg-blue-300 hover:bg-blue-700 cursor-pointer">
+          <Link to="/posting">Posting</Link>
         </button>
-        <PostingModal isOpen={isPostingModalOpen} onClose={handleClosePostingModal} />
       </div>
     </div>
   )
