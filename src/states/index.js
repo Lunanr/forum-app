@@ -4,8 +4,8 @@ import isPreloadReducer from './isPreload/reducer';
 import threadDetailReducer from './threadDetail/reducer';
 import threadsReducer from './threads/reducer';
 import usersReducer from './users/reducer';
-import commentReducer from './Comment/reducer';
 import leaderboardsReducer from './Leaderboars/reducer';
+import { loadingBarReducer } from 'react-redux-loading-bar';
 
 const store = configureStore({
   reducer: {
@@ -13,9 +13,9 @@ const store = configureStore({
     isPreload: isPreloadReducer,
     users: usersReducer,
     threads: threadsReducer,
-    comment: commentReducer,
     threadDetail: threadDetailReducer,
-    leaderboards: leaderboardsReducer
+    leaderboards: leaderboardsReducer,
+    loadingBar: loadingBarReducer,
   },
 });
 

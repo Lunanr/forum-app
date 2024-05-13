@@ -14,10 +14,10 @@ function RegisterPage() {
   };
 
   return (
-    <section className="register-page">
-      <h1>Create your account</h1>
+    <div className="min-h-screen px-64 py-20 lg:px-64 bg-gradient-to-tr from-[#9BB6EB] to-[#D2E0FA]">
+      <h1 className="text-xl mb-5 font-semibold">Create your account</h1>
       <RegisterInput register={onRegister} />
-    </section>
+    </div>
   )
 }
 

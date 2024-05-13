@@ -16,8 +16,10 @@ function LoginPage() {
   }
 
   return (
-    <section className="login-page">
-      <h1>Login</h1>
+    <div className="min-h-screen w-full px-64 py-20 lg:px-64 bg-gradient-to-tr from-[#9BB6EB] to-[#D2E0FA]">
+      <h1 className="text-xl mb-5 font-semibold">
+        Login
+      </h1>
       <LoginInput login={onLogin} />
       <p className="mt-2">
         Don&apos;t have an account?
@@ -26,7 +28,7 @@ function LoginPage() {
           <Link to="/register">Register</Link>
         </button>
       </p>
-    </section>
+    </div>
   )
 }
 

@@ -2,46 +2,56 @@ import { ActionType } from "./action";
 
 function threadsReducer(threads = [], action = {}) {
   switch (action.type) {
-    case ActionType.ADD_THREADS:
+    case ActionType.CREATE_THREAD:
       // Digunakan untuk mengisi threads baru dari action payload yang diterima
       return [action.payload.threads, ...threads];
     case ActionType.RECEIVE_THREADS:
       return action.payload.threads;
-    case ActionType.TOGGLE_UPVOTE_THREAD:
+    case ActionType.UP_VOTE_THREAD:
       return threads.map((thread) => {
         if (thread.id === action.payload.threadId) {
           return {
             ...thread,
             upVotesBy: thread.upVotesBy.includes(action.payload.userId)
-            ? thread.upVotesBy.filter((id) => id !== action.payload.userId)
-            : thread.upVotesBy.concat([action.payload.userId]),
-          };
-        }
-        return threads;
-      });
-    case ActionType.TOGGLE_DOWNVOTE_THREAD:
-      return threads.map((thread) => {
-        if (thread.id === action.payload.threadId) {
-          return {
-            ...thread,
+              ? thread.upVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.upVotesBy.concat([action.payload.userId]),
             downVotesBy: thread.downVotesBy.includes(action.payload.userId)
-            ? thread.downVotesBy.filter((id) => id !== action.payload.userId)
-            : thread.downVotesBy.concat([action.payload.userId]),
+              ? thread.downVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.downVotesBy,
           };
         }
-        return threads;
-      })
-    case ActionType.TOGGLE_NEUTRALIZE_VOTE_THREAD:
+        return thread;
+      });
+    case ActionType.DOWN_VOTE_THREAD:
       return threads.map((thread) => {
         if (thread.id === action.payload.threadId) {
           return {
             ...thread,
-            upVotesBy: thread.upVotesBy.filter((id) => id !== action.payload.userId),
-            downVotesBy: thread.downVotesBy.filter((id) => id !== action.payload.userId)
+            upVotesBy: thread.upVotesBy.includes(action.payload.userId)
+              ? thread.upVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.upVotesBy,
+            downVotesBy: thread.downVotesBy.includes(action.payload.userId)
+              ? thread.downVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.downVotesBy.concat([action.payload.userId]),
           };
         }
-        return threads;
-      })
+        return thread;
+      });
+    case ActionType.NEUTRALIZE_VOTE_THREAD:
+      return threads.map((thread) => {
+        if (thread.id === action.payload.threadId) {
+          return {
+            ...thread,
+            upVotesBy: thread.upVotesBy.includes(action.payload.userId)
+              ? thread.upVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.upVotesBy,
+            downVotesBy: thread.downVotesBy.includes(action.payload.userId)
+              ? thread.downVotesBy.filter((id) => id !== action.payload.userId)
+              : thread.downVotesBy,
+          };
+        }
+        return thread;
+      });
   default:
     return threads;
   }

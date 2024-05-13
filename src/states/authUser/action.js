@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from "react-redux-loading-bar";
 import api from "../../utils/api";
 
 // Digunakan untuk ketika pengguna berhasil melakukan proses autentikasi (login) dalam aplikasi
@@ -19,14 +20,13 @@ function setAuthUserActionCreator(authUser){
 function unsetAuthUserActionCreator() {
   return {
     type: ActionType.UNSET_AUTH_USER,
-    payload: {
-      authedUser: null
-    },
   };
 }
 
+// thunk
 function asyncSetAuthUser({ email, password }){
   return async (dispatch) => {
+    dispatch(showLoading());
     try {
       const token = await api.login({ email, password });
       api.putAccessToken(token);
@@ -36,6 +36,7 @@ function asyncSetAuthUser({ email, password }){
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 

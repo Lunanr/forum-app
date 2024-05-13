@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiThreadsFill } from "react-icons/ri";
 import { MdOutlineLeaderboard } from "react-icons/md";
 
-function SideNav({ authUser }) {
+function SideNav() {
   const navLinks = [
     {
       icons: <RiThreadsFill />,
@@ -17,16 +17,6 @@ function SideNav({ authUser }) {
     }
   ]
 
-  if (authUser === null) {
-    <div className="h-full flex flex-col gap-4 border-r-2 border-blue-400 ">
-      {navLinks.map((d, i) => (
-        <Link key={i} to={d.link} className="font-bold flex items-center gap-4 hover:bg-blue-200 max-w-[fit-content] rounded-full px-2">
-          {React.cloneElement(d.icons, { className: "h-6 w-6" })}
-          {d.label}
-        </Link>
-      ))}
-    </div>
-  }
   return (
     <div className="h-full flex flex-col gap-4 border-r-2 border-blue-400 ">
       {navLinks.map((d, i) => (
