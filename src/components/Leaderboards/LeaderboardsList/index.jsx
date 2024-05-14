@@ -1,4 +1,7 @@
-function LeaderboardsList({ user, score }) {
+import { userShape } from "../../Threads/ThreadItem";
+import PropTypes from 'prop-types';
+
+export default function LeaderboardsList({ user, score }) {
   return (
 
     <div className="flex flex-row justify-between items-center">
@@ -14,4 +17,7 @@ function LeaderboardsList({ user, score }) {
   )
 }
 
-export default LeaderboardsList;
+LeaderboardsList.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
+  score: PropTypes.number.isRequired,
+}

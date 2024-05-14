@@ -1,5 +1,6 @@
 import { AiOutlineComment } from 'react-icons/ai';
-import CommentItem from '../CommentItem';
+import CommentItem, { commentShape } from '../CommentItem';
+import PropTypes from 'prop-types';
 
 export default function CommentList({
   comments,
@@ -20,7 +21,7 @@ export default function CommentList({
     )
   }
   return (
-    <section className="w-full max-w-3xl mx-auto flex flex-col gap-3">
+    <section className="w-full mx-auto flex flex-col gap-3">
       <p className="mt-4">Komentar ({comments.length})</p>
       {comments.map((comment) => (
         <CommentItem
@@ -34,4 +35,12 @@ export default function CommentList({
       ))}
     </section>
   )
+}
+
+CommentList.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.shape(commentShape)).isRequired,
+  authUser: PropTypes.string.isRequired,
+  upVoteComment: PropTypes.func.isRequired,
+  downVoteComment: PropTypes.func.isRequired,
+  neutralizeVoteComment: PropTypes.func.isRequired,
 }

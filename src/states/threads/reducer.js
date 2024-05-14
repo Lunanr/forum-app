@@ -1,12 +1,11 @@
-import { ActionType } from "./action";
+import { ActionType } from './action';
 
-function threadsReducer(threads = [], action = {}) {
+export default function threadsReducer(threads = [], action = {}) {
   switch (action.type) {
-    case ActionType.CREATE_THREAD:
-      // Digunakan untuk mengisi threads baru dari action payload yang diterima
-      return [action.payload.threads, ...threads];
     case ActionType.RECEIVE_THREADS:
       return action.payload.threads;
+    case ActionType.CREATE_THREAD:
+      return [action.payload.thread, ...threads];
     case ActionType.UP_VOTE_THREAD:
       return threads.map((thread) => {
         if (thread.id === action.payload.threadId) {
@@ -52,9 +51,7 @@ function threadsReducer(threads = [], action = {}) {
         }
         return thread;
       });
-  default:
-    return threads;
+    default:
+      return threads;
   }
 }
-
-export default threadsReducer;

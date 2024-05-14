@@ -1,9 +1,11 @@
 import { BsChatLeftDots } from "react-icons/bs";
 import { postedAt } from "../../../utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import VoteButton from "../../Button/VoteButton";
+import PropTypes from "prop-types";
+import { threadItemShape } from "../../constant";
 
-function ThreadsItem({
+export default function ThreadItem({
   id,
   title,
   body,
@@ -63,4 +65,10 @@ function ThreadsItem({
   );
 }
 
-export default ThreadsItem;
+ThreadItem.propTypes = {
+  ...threadItemShape,
+  authUser: PropTypes.string.isRequired,
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
+  neutralizeVote: PropTypes.func.isRequired,
+};

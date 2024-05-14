@@ -1,6 +1,12 @@
-import { FaThumbsUp, FaRegThumbsUp, FaThumbsDown, FaRegThumbsDown } from "react-icons/fa";
+import PropTypes from 'prop-types';
+import {
+  FaThumbsUp,
+  FaRegThumbsUp,
+  FaThumbsDown,
+  FaRegThumbsDown
+} from "react-icons/fa";
 
-function VoteButton({
+export default function VoteButton({
   id,
   authUser,
   upVote,
@@ -62,4 +68,12 @@ function VoteButton({
   )
 }
 
-export default VoteButton;
+VoteButton.propTypes = {
+  id: PropTypes.string.isRequired,
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
+  neutralizeVote: PropTypes.func.isRequired,
+  upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  authUser: PropTypes.string.isRequired,
+};

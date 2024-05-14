@@ -1,5 +1,7 @@
 import { postedAt } from "../../../utils";
 import VoteButton from "../../Button/VoteButton";
+import PropTypes from 'prop-types';
+import { commentShape } from "../../constant";
 
 export default function CommentItem({
   id,
@@ -40,3 +42,11 @@ export default function CommentItem({
     </div>
   )
 }
+
+CommentItem.propTypes = {
+  ...commentShape,
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
+  neutralizeVote: PropTypes.func.isRequired,
+  authUser: PropTypes.string.isRequired,
+};

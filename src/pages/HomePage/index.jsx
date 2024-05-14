@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ThreadsList from '../../components/Threads/ThreadsList';
 import { asyncPopulateUserAndThreads } from '../../states/shared/action';
 import { asyncUpVoteThread, asyncDownVoteThread, asyncNeutralizeVoteThread } from '../../states/threads/action';
-import PopularCategory from '../../components/Category/PopularCategory';
+import { PopularCategory } from '../../components/Category/PopularCategory';
 
 function HomePage() {
   const [filter, setFilter] = useState('');

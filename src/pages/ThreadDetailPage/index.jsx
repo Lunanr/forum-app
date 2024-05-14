@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { asyncNeutralizeVoteThreadDetail, asyncReceiveThreadDetail, asyncUpVoteThreadDetail, asyncDownVoteThreadDetail, asyncUpVoteComment, asyncDownVoteComment, asyncNeutralizeVoteComment, asyncCreateComment } from "../../states/threadDetail/action";
-import ThreadDetail from "../../components/ThreadDetail";
+import ThreadDetail from "../../components/Threads/ThreadDetail";
 import CommentInput from "../../components/Comment/CommentInput";
 import CommentList from "../../components/Comment/CommentList";
 

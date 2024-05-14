@@ -1,5 +1,7 @@
-import { postedAt } from "../../utils"
-import VoteButton from "../Button/VoteButton"
+import { postedAt } from "../../../utils"
+import VoteButton from "../../Button/VoteButton";
+import { userShape } from "../ThreadItem";
+import PropTypes from "prop-types";
 
 export default function ThreadDetail({
   id,
@@ -53,4 +55,19 @@ export default function ThreadDetail({
       </div>
     </section>
   )
+}
+
+ThreadDetail.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  owner: PropTypes.shape(userShape).isRequired,
+  category: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  authUser: PropTypes.string.isRequired,
+  upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  upVoteThreadDetail: PropTypes.func.isRequired,
+  downVoteThreadDetail: PropTypes.func.isRequired,
+  neutralizeVoteThreadDetail: PropTypes.func.isRequired,
 }

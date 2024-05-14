@@ -11,6 +11,7 @@ import Navigation from './components/Navigation';
 import SideNav from './components/SideNav';
 import { asyncPreloadProcess } from './states/isPreload/action';
 import { asyncUnsetAuthUser } from './states/authUser/action';
+import Loading from './components/Loading';
 
 function App() {
   // Digunakan untuk mengambil authUser dan isPreload state from store
@@ -36,12 +37,15 @@ function App() {
 
   if (authUser === null) {
     return (
-      <div className="font-inter">
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </div>
+      <>
+        <Loading />
+        <div className="font-inter">
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </div>
+      </>
     )
   }
 
@@ -49,6 +53,7 @@ function App() {
     <div className="font-inter">
       <header>
         <Navigation authUser={authUser} signOut={onSignOut} />
+        <Loading />
       </header>
       <main className="min-h-screen mx-auto my-0 bg-gradient-to-tr from-[#9BB6EB] to-[#D2E0FA] flex flex-row px-5 pt-3">
         <div className="w-full sm:w-3/12 lg:w-2/12 text-left">

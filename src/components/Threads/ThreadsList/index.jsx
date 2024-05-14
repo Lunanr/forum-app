@@ -1,4 +1,4 @@
-import ThreadsItem from "../ThreadsItem";
+import ThreadItem from "../ThreadItem";
 import PropTypes from 'prop-types';
 
 function ThreadsList({
@@ -11,7 +11,7 @@ function ThreadsList({
     <div className="flex flex-col gap-4">
       <h2 className="font-bold text-2xl">Discussion Available</h2>
       {threads.map((thread, index) => (
-        <ThreadsItem
+        <ThreadItem
           key={index}
           {...thread}
           upVote={upVote}

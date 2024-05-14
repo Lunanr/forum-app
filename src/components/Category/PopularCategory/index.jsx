@@ -1,6 +1,6 @@
-// import React from "react";
+import PropTypes from 'prop-types';
 
-function PopularCategory({ categories, filter, setFilter }) {
+export function PopularCategory({ categories, filter, setFilter }) {
   return (
     <div className=" flex flex-col gap-4">
       <h2 className="font-regular text-lg">Category Popular</h2>
@@ -33,4 +33,8 @@ function PopularCategory({ categories, filter, setFilter }) {
   );
 }
 
-export default PopularCategory;
+PopularCategory.propTypes = {
+  categories: PropTypes.objectOf(PropTypes.string).isRequired,
+  filter: PropTypes.string.isRequired,
+  setFilter: PropTypes.func.isRequired,
+};
