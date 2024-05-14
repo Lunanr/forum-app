@@ -1,4 +1,4 @@
-import { userShape } from "../../Threads/ThreadItem";
+import { userShape } from '../../constant';
 import PropTypes from 'prop-types';
 
 export default function LeaderboardsList({ user, score }) {

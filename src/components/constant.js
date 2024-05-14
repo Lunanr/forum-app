@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
 
+const userShape = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string,
+  avatar: PropTypes.string.isRequired,
+};
+
 const commentShape = {
   id: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
@@ -7,13 +14,6 @@ const commentShape = {
   owner: PropTypes.shape(userShape).isRequired,
   upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
   downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-const userShape = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string,
-  avatar: PropTypes.string.isRequired,
 };
 
 const threadItemShape = {

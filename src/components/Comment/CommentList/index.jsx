@@ -1,5 +1,6 @@
 import { AiOutlineComment } from 'react-icons/ai';
-import CommentItem, { commentShape } from '../CommentItem';
+import CommentItem from '../CommentItem';
+import { commentShape } from '../../constant';
 import PropTypes from 'prop-types';
 
 export default function CommentList({
