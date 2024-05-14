@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { asyncCreateThread } from "../../states/threads/action";
-import PostingInput from "../../components/Posting/PostingInput";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { asyncCreateThread } from '../../states/threads/action';
+import PostingInput from '../../components/Posting/PostingInput';
+import { useNavigate } from 'react-router-dom';
 
 function PostingPage() {
   const dispatch = useDispatch();

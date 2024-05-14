@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import useInput from "../../../hooks/useInput"
+import { useNavigate } from 'react-router-dom';
+import useInput from '../../../hooks/useInput'
 import PropTypes from 'prop-types';
 
 export default function CommentInput({ addComment }) {

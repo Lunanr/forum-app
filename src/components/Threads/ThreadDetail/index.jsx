@@ -1,7 +1,7 @@
-import { postedAt } from "../../../utils"
-import VoteButton from "../../Button/VoteButton";
-import { userShape } from "../../constant";
-import PropTypes from "prop-types";
+import { postedAt } from '../../../utils'
+import VoteButton from '../../Button/VoteButton';
+import { userShape } from '../../constant';
+import PropTypes from 'prop-types';
 
 export default function ThreadDetail({
   id,

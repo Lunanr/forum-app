@@ -1,6 +1,6 @@
-import api from "../../utils/api";
-import { setAuthUserActionCreator } from "../authUser/action";
-import { hideLoading, showLoading } from "react-redux-loading-bar";
+import api from '../../utils/api';
+import { setAuthUserActionCreator } from '../authUser/action';
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
 
 const ActionType = {
   SET_IS_PRELOAD: 'SET_IS_PRELOAD'

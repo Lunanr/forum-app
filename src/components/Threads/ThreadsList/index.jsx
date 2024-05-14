@@ -1,4 +1,4 @@
-import ThreadItem from "../ThreadItem";
+import ThreadItem from '../ThreadItem';
 import PropTypes from 'prop-types';
 
 function ThreadsList({

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { userShape } from "../constant";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { userShape } from '../constant';
 
 export default function Navigation({ authUser, signOut }) {
   return (

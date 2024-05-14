@@ -1,6 +1,6 @@
-import { useState } from "react";
-import useInput from "../../../hooks/useInput";
-import PropTypes from "prop-types";
+import { useState } from 'react';
+import useInput from '../../../hooks/useInput';
+import PropTypes from 'prop-types';
 
 export default function PostingInput({ addThread }) {
   const [title, onTitleChange] = useInput('');

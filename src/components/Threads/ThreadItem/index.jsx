@@ -1,9 +1,9 @@
-import { BsChatLeftDots } from "react-icons/bs";
-import { postedAt } from "../../../utils";
-import { useNavigate } from "react-router-dom";
-import VoteButton from "../../Button/VoteButton";
-import PropTypes from "prop-types";
-import { threadItemShape } from "../../constant";
+import { BsChatLeftDots } from 'react-icons/bs';
+import { postedAt } from '../../../utils';
+import { useNavigate } from 'react-router-dom';
+import VoteButton from '../../Button/VoteButton';
+import PropTypes from 'prop-types';
+import { threadItemShape } from '../../constant';
 
 export default function ThreadItem({
   id,

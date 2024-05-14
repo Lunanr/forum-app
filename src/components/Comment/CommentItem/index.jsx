@@ -1,7 +1,7 @@
-import { postedAt } from "../../../utils";
-import VoteButton from "../../Button/VoteButton";
+import { postedAt } from '../../../utils';
+import VoteButton from '../../Button/VoteButton';
 import PropTypes from 'prop-types';
-import { commentShape } from "../../constant";
+import { commentShape } from '../../constant';
 
 export default function CommentItem({
   id,

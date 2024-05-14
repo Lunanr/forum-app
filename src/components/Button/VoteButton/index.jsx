@@ -4,7 +4,7 @@ import {
   FaRegThumbsUp,
   FaThumbsDown,
   FaRegThumbsDown
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 export default function VoteButton({
   id,

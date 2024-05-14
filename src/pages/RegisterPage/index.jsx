@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { asyncRegisterUser } from "../../states/users/action";
-import RegisterInput from "../../components/Register/RegisterInput";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { asyncRegisterUser } from '../../states/users/action';
+import RegisterInput from '../../components/Register/RegisterInput';
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ function RegisterPage() {
   const onRegister = ({ name, email, password }) => {
     dispatch(asyncRegisterUser({ name, email, password }));
 
-    navigate('/login');
+    navigate('/');
   };
 
   return (

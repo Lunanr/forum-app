@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { asyncSetAuthUser } from "../../states/authUser/action";
-import LoginInput from "../../components/Login/LoginInput";
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { asyncSetAuthUser } from '../../states/authUser/action';
+import LoginInput from '../../components/Login/LoginInput';
 
 function LoginPage() {
   // Digunakan untuk mempermudah pengguanaan aksi Redux di dalam komponen fungsional, tanpa perlu mengimpor store atau action creator secara langsung
