@@ -1,8 +1,9 @@
-import { BsChatLeftDots } from 'react-icons/bs';
-import { postedAt } from '../../../utils';
-import { useNavigate } from 'react-router-dom';
-import VoteButton from '../../Button/VoteButton';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { BsChatLeftDots } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import postedAt from '../../../utils';
+import VoteButton from '../../Button/VoteButton';
 import { threadItemShape } from '../../constant';
 
 export default function ThreadItem({
@@ -26,6 +27,12 @@ export default function ThreadItem({
     navigate(`/threads/${id}`);
   }
 
+  function onThreadPress(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      navigate(`/threads/${id}`);
+    }
+  }
+
   return (
     <div className="flex flex-col gap-2 justify-center border-b-2 border-blue-400">
       <header>
@@ -33,7 +40,13 @@ export default function ThreadItem({
           # {category}
         </span>
         <h1 className="mt-5">
-          <div className="cursor-pointer font-bold" onClick={onThreadClick}>
+          <div
+            tabIndex={0}
+            role="button"
+            className="cursor-pointer font-bold"
+            onClick={onThreadClick}
+            onKeyDown={onThreadPress}
+          >
             {title}
           </div>
         </h1>
@@ -61,7 +74,7 @@ export default function ThreadItem({
           Dibuat oleh <strong>{user.name}</strong>
         </span>
       </footer>
-    </div >
+    </div>
   );
 }
 

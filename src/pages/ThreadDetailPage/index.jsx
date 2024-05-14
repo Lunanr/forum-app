@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
@@ -9,7 +9,7 @@ import {
   asyncUpVoteComment,
   asyncDownVoteComment,
   asyncNeutralizeVoteComment,
-  asyncCreateComment
+  asyncCreateComment,
 } from '../../states/threadDetail/action';
 import ThreadDetail from '../../components/Threads/ThreadDetail';
 import CommentInput from '../../components/Comment/CommentInput';
@@ -27,31 +27,31 @@ export default function ThreadDetailPage() {
 
   const onUpVoteThreadDetail = () => {
     dispatch(asyncUpVoteThreadDetail());
-  }
+  };
 
   const onDownVoteThreadDetail = () => {
     dispatch(asyncDownVoteThreadDetail());
-  }
+  };
 
   const onNeutralizeVoteThreadDetail = () => {
     dispatch(asyncNeutralizeVoteThreadDetail());
-  }
+  };
 
   const onCommentSubmit = (content) => {
     dispatch(asyncCreateComment({ content }));
-  }
+  };
 
   const onUpVoteComment = (id) => {
     dispatch(asyncUpVoteComment(id));
-  }
+  };
 
   const onDownVoteCommment = (id) => {
     dispatch(asyncDownVoteComment(id));
-  }
+  };
 
   const onNeutralizeVoteComment = (id) => {
     dispatch(asyncNeutralizeVoteComment(id));
-  }
+  };
 
   if (!threadDetail) {
     return null;
@@ -78,5 +78,5 @@ export default function ThreadDetailPage() {
         />
       </div>
     </section>
-  )
+  );
 }

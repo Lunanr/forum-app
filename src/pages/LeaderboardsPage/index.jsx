@@ -1,6 +1,6 @@
-import LeaderboardsList from '../../components/Leaderboards/LeaderboardsList';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import LeaderboardsList from '../../components/Leaderboards/LeaderboardsList';
 import { asyncPopulateLeaderboards } from '../../states/Leaderboars/action';
 
 function LeaderboardsPage() {
@@ -24,7 +24,7 @@ function LeaderboardsPage() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 export default LeaderboardsPage;

@@ -1,9 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   FaThumbsUp,
   FaRegThumbsUp,
   FaThumbsDown,
-  FaRegThumbsDown
+  FaRegThumbsDown,
 } from 'react-icons/fa';
 
 export default function VoteButton({
@@ -36,12 +37,16 @@ export default function VoteButton({
         {isUpvoted ? (
           <button
             onClick={onNeutralizeVoteClick}
+            aria-label="Neutralize Vote"
+            type="button"
           >
             <FaThumbsUp />
           </button>
         ) : (
           <button
             onClick={onUpVoteClick}
+            aria-label="Up Vote"
+            type="button"
           >
             <FaRegThumbsUp />
           </button>
@@ -52,12 +57,16 @@ export default function VoteButton({
         {isDownVoted ? (
           <button
             onClick={onNeutralizeVoteClick}
+            aria-label="Neutralize Vote"
+            type="button"
           >
             <FaThumbsDown />
           </button>
         ) : (
           <button
             onClick={onDownVoteClick}
+            aria-label="Down Vote"
+            type="button"
           >
             <FaRegThumbsDown />
           </button>
@@ -65,7 +74,7 @@ export default function VoteButton({
         <p>{downVotesBy.length}</p>
       </div>
     </div>
-  )
+  );
 }
 
 VoteButton.propTypes = {

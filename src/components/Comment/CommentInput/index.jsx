@@ -1,15 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import useInput from '../../../hooks/useInput'
+import React from 'react';
 import PropTypes from 'prop-types';
+import useInput from '../../../hooks/useInput';
 
 export default function CommentInput({ addComment }) {
   const [comment, onCommentChange, setComment] = useInput('');
-  const navigate = useNavigate();
 
-  const onCommentSubmit = () => {
+  const onCommentSubmit = (event) => {
+    event.preventDefault();
     addComment(comment);
     setComment('');
-    navigate('/');
   };
   return (
     <div className="mt-3">
@@ -29,7 +28,7 @@ export default function CommentInput({ addComment }) {
         </button>
       </form>
     </div>
-  )
+  );
 }
 
 CommentInput.propTypes = {

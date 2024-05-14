@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import useInput from '../../../hooks/useInput';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import useInput from '../../../hooks/useInput';
 
 export default function PostingInput({ addThread }) {
   const [title, onTitleChange] = useInput('');
@@ -13,7 +13,7 @@ export default function PostingInput({ addThread }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    addThread({ title, category, body })
+    addThread({ title, category, body });
   }
 
   return (
@@ -48,9 +48,9 @@ export default function PostingInput({ addThread }) {
         Posting
       </button>
     </form>
-  )
+  );
 }
 
 PostingInput.propTypes = {
   addThread: PropTypes.func.isRequired,
-}
+};

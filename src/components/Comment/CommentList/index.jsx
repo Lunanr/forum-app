@@ -1,14 +1,15 @@
+import React from 'react';
 import { AiOutlineComment } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 import CommentItem from '../CommentItem';
 import { commentShape } from '../../constant';
-import PropTypes from 'prop-types';
 
 export default function CommentList({
   comments,
   authUser,
   upVoteComment,
   downVoteComment,
-  neutralizeVoteComment
+  neutralizeVoteComment,
 }) {
   if (comments.length === 0) {
     return (
@@ -19,11 +20,16 @@ export default function CommentList({
           Jadilah pertama yang berkomentar
         </p>
       </div>
-    )
+    );
   }
   return (
     <section className="w-full mx-auto flex flex-col gap-3">
-      <p className="mt-4">Komentar ({comments.length})</p>
+      <p className="mt-4">
+        Komentar
+        (
+        {comments.length}
+        )
+      </p>
       {comments.map((comment) => (
         <CommentItem
           key={comment.id}
@@ -35,7 +41,7 @@ export default function CommentList({
         />
       ))}
     </section>
-  )
+  );
 }
 
 CommentList.propTypes = {
@@ -44,4 +50,4 @@ CommentList.propTypes = {
   upVoteComment: PropTypes.func.isRequired,
   downVoteComment: PropTypes.func.isRequired,
   neutralizeVoteComment: PropTypes.func.isRequired,
-}
+};

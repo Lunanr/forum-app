@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreadsList from '../../components/Threads/ThreadsList';
-import { asyncPopulateUserAndThreads } from '../../states/shared/action';
-import { asyncUpVoteThread, asyncDownVoteThread, asyncNeutralizeVoteThread } from '../../states/threads/action';
-import { PopularCategory } from '../../components/Category/PopularCategory';
+import asyncPopulateUserAndThreads from '../../states/shared/action';
+import {
+  asyncUpVoteThread,
+  asyncDownVoteThread,
+  asyncNeutralizeVoteThread,
+} from '../../states/threads/action';
+import PopularCategory from '../../components/Category/PopularCategory';
 
 function HomePage() {
   const [filter, setFilter] = useState('');
@@ -24,15 +28,15 @@ function HomePage() {
 
   const onUpVoteThread = (id) => {
     dispatch(asyncUpVoteThread(id));
-  }
+  };
 
   const onDownVoteThread = (id) => {
     dispatch(asyncDownVoteThread(id));
-  }
+  };
 
   const onNeutralizeVoteThread = (id) => {
     dispatch(asyncNeutralizeVoteThread(id));
-  }
+  };
 
   const threadsList = threads.map((thread) => ({
     ...thread,
@@ -58,7 +62,7 @@ function HomePage() {
         neutralizeVote={onNeutralizeVoteThread}
       />
     </section>
-  )
+  );
 }
 
 export default HomePage;

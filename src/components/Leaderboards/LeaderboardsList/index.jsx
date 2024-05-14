@@ -1,5 +1,6 @@
-import { userShape } from '../../constant';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { userShape } from '../../constant';
 
 export default function LeaderboardsList({ user, score }) {
   return (
@@ -9,15 +10,16 @@ export default function LeaderboardsList({ user, score }) {
         <img
           className="w-10 h-10 rounded-full align-middle bg-slate-100"
           src={user.avatar}
-          alt={user.name} />
+          alt={user.name}
+        />
         <p>{user.name}</p>
       </div>
       <p>{score}</p>
     </div>
-  )
+  );
 }
 
 LeaderboardsList.propTypes = {
   user: PropTypes.shape(userShape).isRequired,
   score: PropTypes.number.isRequired,
-}
+};

@@ -1,7 +1,8 @@
-import { postedAt } from '../../../utils'
+import React from 'react';
+import PropTypes from 'prop-types';
+import postedAt from '../../../utils';
 import VoteButton from '../../Button/VoteButton';
 import { userShape } from '../../constant';
-import PropTypes from 'prop-types';
 
 export default function ThreadDetail({
   id,
@@ -54,7 +55,7 @@ export default function ThreadDetail({
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 ThreadDetail.propTypes = {
@@ -70,4 +71,4 @@ ThreadDetail.propTypes = {
   upVoteThreadDetail: PropTypes.func.isRequired,
   downVoteThreadDetail: PropTypes.func.isRequired,
   neutralizeVoteThreadDetail: PropTypes.func.isRequired,
-}
+};

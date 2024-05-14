@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import HomePage from './pages/HomePage';
@@ -46,7 +46,7 @@ function App() {
           </Routes>
         </div>
       </>
-    )
+    );
   }
 
   return (
@@ -69,7 +69,7 @@ function App() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export default App;

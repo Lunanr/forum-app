@@ -1,7 +1,8 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { asyncCreateThread } from '../../states/threads/action';
 import PostingInput from '../../components/Posting/PostingInput';
-import { useNavigate } from 'react-router-dom';
 
 function PostingPage() {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ function PostingPage() {
   const onAddThread = ({ title, body, category }) => {
     dispatch(asyncCreateThread({ title, body, category }));
 
-    navigate('/')
+    navigate('/');
   };
 
   return (

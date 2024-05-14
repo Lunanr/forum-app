@@ -8,7 +8,7 @@ const ActionType = {
 };
 
 // Digunakan untuk pengguna yang terautentikasi
-function setAuthUserActionCreator(authUser){
+function setAuthUserActionCreator(authUser) {
   return {
     type: ActionType.SET_AUTH_USER,
     payload: {
@@ -24,7 +24,7 @@ function unsetAuthUserActionCreator() {
 }
 
 // thunk
-function asyncSetAuthUser({ email, password }){
+function asyncSetAuthUser({ email, password }) {
   return async (dispatch) => {
     dispatch(showLoading());
     try {
@@ -44,7 +44,7 @@ function asyncUnsetAuthUser() {
   return (dispatch) => {
     dispatch(unsetAuthUserActionCreator());
     api.putAccessToken('');
-  }
+  };
 }
 
 export {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { userShape } from '../constant';
@@ -9,19 +10,25 @@ export default function Navigation({ authUser, signOut }) {
         <Link to="/" className="text-4xl">Forum-App</Link>
       </nav>
       <div className="flex items-center gap-5">
-        <button className="rounded-full px-5 py-2  bg-blue-300 hover:bg-blue-700 cursor-pointer" onClick={signOut}>
+        <button
+          className="rounded-full px-5 py-2  bg-blue-300 hover:bg-blue-700 cursor-pointer"
+          onClick={signOut}
+          type="button"
+        >
           <Link to="/">logout</Link>
         </button>
         <p>Hi, {authUser.name}</p>
-        <img className=" w-10 rounded-full"
-          src={authUser.avatar} alt="Profile"
+        <img
+          className=" w-10 rounded-full"
+          src={authUser.avatar}
+          alt="Profile"
         />
       </div>
     </div>
-  )
+  );
 }
 
 Navigation.propTypes = {
   authUser: PropTypes.shape(userShape).isRequired,
   signOut: PropTypes.func.isRequired,
-}
+};

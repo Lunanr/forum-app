@@ -1,6 +1,7 @@
-import { postedAt } from '../../../utils';
-import VoteButton from '../../Button/VoteButton';
+import React from 'react';
 import PropTypes from 'prop-types';
+import postedAt from '../../../utils';
+import VoteButton from '../../Button/VoteButton';
 import { commentShape } from '../../constant';
 
 export default function CommentItem({
@@ -21,7 +22,8 @@ export default function CommentItem({
         <img
           className="w-6 h-6 rounded-full"
           src={owner.avatar}
-          alt={owner.name} />
+          alt={owner.name}
+        />
         <p>{owner.name}</p>
         <p>{postedAt(createdAt)}</p>
       </header>
@@ -40,7 +42,7 @@ export default function CommentItem({
         />
       </div>
     </div>
-  )
+  );
 }
 
 CommentItem.propTypes = {

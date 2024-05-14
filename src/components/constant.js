@@ -28,4 +28,4 @@ const threadItemShape = {
   user: PropTypes.shape(userShape).isRequired,
 };
 
-export {commentShape, userShape, threadItemShape};
+export { commentShape, userShape, threadItemShape };
