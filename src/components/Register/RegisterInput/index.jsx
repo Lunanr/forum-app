@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import useInput from '../../../hooks/useInput';
 
 function RegisterInput({ register }) {
@@ -37,16 +36,6 @@ function RegisterInput({ register }) {
         <input className="p-1 px-3 rounded-full" type="password" placeholder="Password" value={password} onChange={onPasswordChange} />
       </label>
       <button className=" bg-blue-300 px-5 py-2 rounded-full hover:bg-blue-700 mt-5 w-96" type="button" onClick={handleSubmit}>Register</button>
-      <p className="mt-2">
-        have an account?
-        {' '}
-        <button
-          className=" text-blue-700"
-          type="button"
-        >
-          <Link to="/">login</Link>
-        </button>
-      </p>
     </form>
   );
 }

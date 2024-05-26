@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import useInput from '../../../hooks/useInput';
 
 function LoginInput({ login }) {
@@ -44,16 +43,6 @@ function LoginInput({ login }) {
       >
         Login
       </button>
-      <p className="mt-2">
-        Don&apos;t have an account?
-        {' '}
-        <button
-          className=" text-blue-700"
-          type="button"
-        >
-          <Link to="/register">Register</Link>
-        </button>
-      </p>
     </form>
 
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { asyncSetAuthUser } from '../../states/authUser/action';
 import LoginInput from '../../components/Login/LoginInput';
 
@@ -22,8 +22,18 @@ function LoginPage() {
       <h1 className="text-xl mb-5 font-semibold">
         Login
       </h1>
-      <div className="mx-auto">
+      <div className="mx-auto flex flex-col gap-4">
         <LoginInput login={onLogin} />
+        <p className="mt-2">
+          don&apos;t have an account?
+          {' '}
+          <button
+            className=" text-blue-700"
+            type="button"
+          >
+            <Link to="/register">Register</Link>
+          </button>
+        </p>
       </div>
     </div>
   );
