@@ -20,7 +20,7 @@ function RegisterPage() {
       <div className="mx-auto flex flex-col gap-4">
         <RegisterInput register={onRegister} />
         <p className="mt-2">
-          apakah punya akun?
+          have an account?
           {' '}
           <button
             className=" text-blue-700"
